@@ -4,7 +4,7 @@
 ; 이하는 표준적인 FAT12 포맷 플로피 디스크를 위한 기술
 
 		DB		0xeb, 0x4e, 0x90
-		DB		"JINSEOP"	; boot sector의 이름은 자유롭게 써도 좋다(8바이트)
+		DB		"Jinseop"	; boot sector의 이름은 자유롭게 써도 좋다(8바이트)
 		DW		512		; 1섹터의 크기(512로 해야 함)
 		DB		1		; 클러스터의 크기(1섹터로 해야 함)
 		DW		1		; FAT가 어디에서 시작될까(보통은 1섹터째부터)
@@ -19,7 +19,7 @@
 		DD		2880		; 드라이브 크기를 한번 더 write
 		DB		0,0,0x29	; 잘 모르지만 이 값으로 해 두면 좋은 것 같다
 		DD		0xffffffff	; 아마, 볼륨 시리얼 번호
-		DB		"HELLO-OS   "	; 디스크 이름(11바이트)
+		DB		"BBKim's OS   "	; 디스크 이름(11바이트)
 		DB		"FAT12   "	; 포맷 이름(8바이트)
 		RESB	18			; 우선 18바이트를 비어둔다
 
@@ -34,7 +34,7 @@
 ; 메세지 부분
 
 		DB		0x0a, 0x0a		; 개행을 2개
-		DB		"hello, world"
+		DB		"HELLO~ Jseop' OS"
 		DB		0x0a			; 개행
 		DB		0
 
